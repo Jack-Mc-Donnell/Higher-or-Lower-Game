@@ -1,0 +1,535 @@
+import random
+
+ 
+
+print ('''
+
+  ___ ___ .__       .__                                  .____                              
+
+ /   |   \|__| ____ |  |__   ___________    ___________  |    |    ______  _  __ ___________
+
+/    ~    \  |/ ___\|  |  \_/ __ \_  __ \  /  _ \_  __ \ |    |   /  _ \ \/ \/ // __ \_  __ \
+
+\    Y    /  / /_/  >   Y  \  ___/|  | \/ (  <_> )  | \/ |    |__(  <_> )     /\  ___/|  | \/
+
+\___|_  /|__\___  /|___|  /\___  >__|     \____/|__|    |_______ \____/ \/\_/  \___  >__|  
+
+       \/   /_____/      \/     \/                               \/                 \/        \n''')
+
+ 
+
+options = {
+
+ 
+
+    "Cristiano Ronaldo": {"Follower_Count": 652_000_000, "Occupation": "Footballer", "Nationality": "Portuguese"},
+
+    "Lionel Messi": {"Follower_Count": 505_000_000, "Occupation": "Footballer", "Nationality": "Argentinian"},
+
+    "Selena Gomez": {"Follower_Count": 421_000_000, "Occupation": "Musician and Actress", "Nationality": "American"},
+
+    "Dwayne Johnson": {"Follower_Count": 394_000_000, "Occupation": "Actor and Wrestler", "Nationality": "American"},
+
+    "Kylie Jenner": {"Follower_Count": 394_000_000, "Occupation": "Media Personality", "Nationality": "American"},
+
+    "Ariana Grande": {"Follower_Count": 376_000_000, "Occupation": "Musician and Actress", "Nationality": "American"},
+
+    "Kim Kardashian": {"Follower_Count": 356_000_000, "Occupation": "Media Personality", "Nationality": "American"},
+
+    "Beyonce": {"Follower_Count": 311_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Khloe Kardashian": {"Follower_Count": 302_000_000, "Occupation": "Media Personality", "Nationality": "American"},
+
+    "Justin Bieber": {"Follower_Count": 294_000_000, "Occupation": "Musician", "Nationality": "Canadian"},
+
+    "Taylor Swift": {"Follower_Count": 281_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Jennifer Lopez": {"Follower_Count": 248_000_000, "Occupation": "Musician and Actress", "Nationality": "American"},
+
+    "Neymar": {"Follower_Count": 229_000_000, "Occupation": "Footballer", "Nationality": "Brazilian"},
+
+    "Nicki Minaj": {"Follower_Count": 225_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Miley Cyrus": {"Follower_Count": 215_000_000, "Occupation": "Musician and Actress", "Nationality": "American"},
+
+    "Katy Perry": {"Follower_Count": 190_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Kevin Hart": {"Follower_Count": 170_000_000, "Occupation": "Comedian and Actor", "Nationality": "American"},
+
+    "Demi Lovato": {"Follower_Count": 160_000_000, "Occupation": "Musician and Actress", "Nationality": "American"},
+
+    "Shakira": {"Follower_Count": 150_000_000, "Occupation": "Musician", "Nationality": "Colombian"},
+
+    "Drake": {"Follower_Count": 140_000_000, "Occupation": "Musician", "Nationality": "Canadian"},
+
+    "Chris Brown": {"Follower_Count": 130_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Ellen DeGeneres": {"Follower_Count": 120_000_000, "Occupation": "TV Host", "Nationality": "American"},
+
+    "Chris Hemsworth": {"Follower_Count": 110_000_000, "Occupation": "Actor", "Nationality": "Australian"},
+
+    "LeBron James": {"Follower_Count": 100_000_000, "Occupation": "Basketball Player", "Nationality": "American"},
+
+    "Priyanka Chopra": {"Follower_Count": 90_000_000, "Occupation": "Actress", "Nationality": "Indian"},
+
+    "Shawn Mendes": {"Follower_Count": 85_000_000, "Occupation": "Musician", "Nationality": "Canadian"},
+
+    "Camila Cabello": {"Follower_Count": 80_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Zac Efron": {"Follower_Count": 75_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Will Smith": {"Follower_Count": 65_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Rihanna": {"Follower_Count": 60_000_000, "Occupation": "Musician", "Nationality": "Barbadian"},
+
+    "Billie Eilish": {"Follower_Count": 55_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Ed Sheeran": {"Follower_Count": 50_000_000, "Occupation": "Musician", "Nationality": "British"},
+
+    "Zayn Malik": {"Follower_Count": 45_000_000, "Occupation": "Musician", "Nationality": "British"},
+
+    "Harry Styles": {"Follower_Count": 40_000_000, "Occupation": "Musician", "Nationality": "British"},
+
+    "Bruno Mars": {"Follower_Count": 35_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Lady Gaga": {"Follower_Count": 30_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Adele": {"Follower_Count": 25_000_000, "Occupation": "Musician", "Nationality": "British"},
+
+    "Tom Holland": {"Follower_Count": 20_000_000, "Occupation": "Actor", "Nationality": "British"},
+
+    "Jason Momoa": {"Follower_Count": 16_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Margot Robbie": {"Follower_Count": 14_000_000, "Occupation": "Actress", "Nationality": "Australian"},
+
+    "Ryan Reynolds": {"Follower_Count": 12_000_000, "Occupation": "Actor", "Nationality": "Canadian"},
+
+    "Emma Stone": {"Follower_Count": 10_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Chris Evans": {"Follower_Count": 9_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Scarlett Johansson": {"Follower_Count": 8_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Robert Downey Jr.": {"Follower_Count": 7_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Tom Hiddleston": {"Follower_Count": 6_000_000, "Occupation": "Actor", "Nationality": "British"},
+
+    "Benedict Cumberbatch": {"Follower_Count": 5_000_000, "Occupation": "Actor", "Nationality": "British"},
+
+    "Bad Bunny": {"Follower_Count": 45_000_000, "Occupation": "Musician", "Nationality": "Puerto Rican"},
+
+    "J Balvin": {"Follower_Count": 52_000_000, "Occupation": "Musician", "Nationality": "Colombian"},
+
+    "Lil Nas X": {"Follower_Count": 14_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Post Malone": {"Follower_Count": 25_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Cardi B": {"Follower_Count": 169_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Snoop Dogg": {"Follower_Count": 88_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Machine Gun Kelly": {"Follower_Count": 10_000_000, "Occupation": "Musician and Actor", "Nationality": "American"},
+
+    "Tyga": {"Follower_Count": 38_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Lizzo": {"Follower_Count": 13_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "BLACKPINK": {"Follower_Count": 56_000_000, "Occupation": "Musical Group", "Nationality": "South Korean"},
+
+    "Lisa (BLACKPINK)": {"Follower_Count": 97_000_000, "Occupation": "Musician", "Nationality": "Thai"},
+
+    "Jennie (BLACKPINK)": {"Follower_Count": 90_000_000, "Occupation": "Musician", "Nationality": "South Korean"},
+
+    "Rose (BLACKPINK)": {"Follower_Count": 76_000_000, "Occupation": "Musician", "Nationality": "South Korean"},
+
+    "Jisoo (BLACKPINK)": {"Follower_Count": 80_000_000, "Occupation": "Musician", "Nationality": "South Korean"},
+
+    "RM (BTS)": {"Follower_Count": 42_000_000, "Occupation": "Musician", "Nationality": "South Korean"},
+
+    "Jungkook (BTS)": {"Follower_Count": 75_000_000, "Occupation": "Musician", "Nationality": "South Korean"},
+
+    "V (BTS)": {"Follower_Count": 68_000_000, "Occupation": "Musician", "Nationality": "South Korean"},
+
+    "Jimin (BTS)": {"Follower_Count": 60_000_000, "Occupation": "Musician", "Nationality": "South Korean"},
+
+    "Dr. Dre": {"Follower_Count": 6_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Travis Scott": {"Follower_Count": 50_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Tyler, The Creator": {"Follower_Count": 8_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Frank Ocean": {"Follower_Count": 3_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Anya Taylor-Joy": {"Follower_Count": 10_000_000, "Occupation": "Actress", "Nationality": "American-British"},
+
+    "Pedro Pascal": {"Follower_Count": 6_000_000, "Occupation": "Actor", "Nationality": "Chilean-American"},
+
+    "Millie Bobby Brown": {"Follower_Count": 62_000_000, "Occupation": "Actress", "Nationality": "British"},
+
+    "Finn Wolfhard": {"Follower_Count": 25_000_000, "Occupation": "Actor", "Nationality": "Canadian"},
+
+    "Noah Schnapp": {"Follower_Count": 28_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Sadie Sink": {"Follower_Count": 23_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "David Harbour": {"Follower_Count": 9_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Keanu Reeves": {"Follower_Count": 3_000_000, "Occupation": "Actor", "Nationality": "Canadian"},
+
+    "Natalie Portman": {"Follower_Count": 8_000_000, "Occupation": "Actress", "Nationality": "Israeli-American"},
+
+    "Anne Hathaway": {"Follower_Count": 26_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Zoe Kravitz": {"Follower_Count": 9_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Austin Butler": {"Follower_Count": 6_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Timothee Chalamet": {"Follower_Count": 19_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "Zendaya": {"Follower_Count": 190_000_000, "Occupation": "Actress and Model", "Nationality": "American"},
+
+    "Hunter Schafer": {"Follower_Count": 8_000_000, "Occupation": "Actress and Model", "Nationality": "American"},
+
+    "Jacob Elordi": {"Follower_Count": 13_000_000, "Occupation": "Actor", "Nationality": "Australian"},
+
+    "Halsey": {"Follower_Count": 31_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Avril Lavigne": {"Follower_Count": 12_000_000, "Occupation": "Musician", "Nationality": "Canadian"},
+
+    "Shania Twain": {"Follower_Count": 3_000_000, "Occupation": "Musician", "Nationality": "Canadian"},
+
+    "Celine Dion": {"Follower_Count": 6_000_000, "Occupation": "Musician", "Nationality": "Canadian"},
+
+    "Enrique Iglesias": {"Follower_Count": 16_000_000, "Occupation": "Musician", "Nationality": "Spanish"},
+
+    "Luis Fonsi": {"Follower_Count": 10_000_000, "Occupation": "Musician", "Nationality": "Puerto Rican"},
+
+    "Pitbull": {"Follower_Count": 9_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Ricky Martin": {"Follower_Count": 17_000_000, "Occupation": "Musician", "Nationality": "Puerto Rican"},
+
+    "Maluma": {"Follower_Count": 63_000_000, "Occupation": "Musician", "Nationality": "Colombian"},
+
+    "Bella Hadid": {"Follower_Count": 60_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Gigi Hadid": {"Follower_Count": 79_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Hailey Bieber": {"Follower_Count": 52_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Kendall Jenner": {"Follower_Count": 294_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Emily Ratajkowski": {"Follower_Count": 30_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Winnie Harlow": {"Follower_Count": 10_000_000, "Occupation": "Model", "Nationality": "Canadian"},
+
+    "Cara Delevingne": {"Follower_Count": 42_000_000, "Occupation": "Model and Actress", "Nationality": "British"},
+
+    "Naomi Campbell": {"Follower_Count": 15_000_000, "Occupation": "Model", "Nationality": "British"},
+
+    "Tyra Banks": {"Follower_Count": 7_000_000, "Occupation": "Model and TV Host", "Nationality": "American"},
+
+    "Cindy Crawford": {"Follower_Count": 7_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Iman": {"Follower_Count": 1_000_000, "Occupation": "Model", "Nationality": "Somali-American"},
+
+    "Christy Turlington": {"Follower_Count": 1_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Adut Akech": {"Follower_Count": 1_500_000, "Occupation": "Model", "Nationality": "South Sudanese-Australian"},
+
+    "Liu Wen": {"Follower_Count": 5_000_000, "Occupation": "Model", "Nationality": "Chinese"},
+
+    "Sasha Luss": {"Follower_Count": 1_200_000, "Occupation": "Model and Actress", "Nationality": "Russian"},
+
+    "Barbara Palvin": {"Follower_Count": 20_000_000, "Occupation": "Model", "Nationality": "Hungarian"},
+
+    "Elsa Hosk": {"Follower_Count": 8_000_000, "Occupation": "Model", "Nationality": "Swedish"},
+
+    "Romee Strijd": {"Follower_Count": 7_000_000, "Occupation": "Model", "Nationality": "Dutch"},
+
+    "Alessandra Ambrosio": {"Follower_Count": 12_000_000, "Occupation": "Model", "Nationality": "Brazilian"},
+
+    "Adriana Lima": {"Follower_Count": 15_000_000, "Occupation": "Model", "Nationality": "Brazilian"},
+
+    "Joan Smalls": {"Follower_Count": 5_000_000, "Occupation": "Model", "Nationality": "Puerto Rican"},
+
+    "Jourdan Dunn": {"Follower_Count": 3_000_000, "Occupation": "Model", "Nationality": "British"},
+
+    "Lais Ribeiro": {"Follower_Count": 3_000_000, "Occupation": "Model", "Nationality": "Brazilian"},
+
+    "Taylor Hill": {"Follower_Count": 21_000_000, "Occupation": "Model", "Nationality": "American"},
+
+    "Sara Sampaio": {"Follower_Count": 8_000_000, "Occupation": "Model", "Nationality": "Portuguese"},
+
+    "Irina Shayk": {"Follower_Count": 23_000_000, "Occupation": "Model", "Nationality": "Russian"},
+
+    "Behati Prinsloo": {"Follower_Count": 8_000_000, "Occupation": "Model", "Nationality": "Namibian"},
+
+    "Candice Swanepoel": {"Follower_Count": 20_000_000, "Occupation": "Model", "Nationality": "South African"},
+
+    "Heidi Klum": {"Follower_Count": 11_000_000, "Occupation": "Model and Host", "Nationality": "German"},
+
+    "Rosie Huntington-Whiteley": {"Follower_Count": 17_000_000, "Occupation": "Model and Actress", "Nationality": "British"},
+
+    "Megan Fox": {"Follower_Count": 21_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Blake Lively": {"Follower_Count": 43_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Gal Gadot": {"Follower_Count": 125_000_000, "Occupation": "Actress", "Nationality": "Israeli"},
+
+    "Salma Hayek": {"Follower_Count": 26_000_000, "Occupation": "Actress", "Nationality": "Mexican-American"},
+
+    "Penelope Cruz": {"Follower_Count": 6_000_000, "Occupation": "Actress", "Nationality": "Spanish"},
+
+    "Monica Bellucci": {"Follower_Count": 5_000_000, "Occupation": "Actress", "Nationality": "Italian"},
+
+    "Charlize Theron": {"Follower_Count": 7_000_000, "Occupation": "Actress", "Nationality": "South African"},
+
+    "Emma Watson": {"Follower_Count": 76_000_000, "Occupation": "Actress", "Nationality": "British"},
+
+    "Reese Witherspoon": {"Follower_Count": 34_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Jennifer Aniston": {"Follower_Count": 46_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Julia Roberts": {"Follower_Count": 12_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Drew Barrymore": {"Follower_Count": 17_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Joe Rogan": {"Follower_Count": 18_000_000, "Occupation": "Podcast Host", "Nationality": "American"},
+
+    "Jack Harlow": {"Follower_Count": 8_000_000, "Occupation": "Rapper", "Nationality": "American"},
+
+    "Doja Cat": {"Follower_Count": 26_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Ariana DeBose": {"Follower_Count": 1_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Jenna Ortega": {"Follower_Count": 45_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Lana Del Rey": {"Follower_Count": 15_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Offset": {"Follower_Count": 20_000_000, "Occupation": "Rapper", "Nationality": "American"},
+
+    "Quavo": {"Follower_Count": 22_000_000, "Occupation": "Rapper", "Nationality": "American"},
+
+    "Sofia Vergara": {"Follower_Count": 31_000_000, "Occupation": "Actress", "Nationality": "Colombian-American"},
+
+    "Camila Mendes": {"Follower_Count": 27_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Lili Reinhart": {"Follower_Count": 25_000_000, "Occupation": "Actress", "Nationality": "American"},
+
+    "Cole Sprouse": {"Follower_Count": 35_000_000, "Occupation": "Actor", "Nationality": "American"},
+
+    "KJ Apa": {"Follower_Count": 18_000_000, "Occupation": "Actor", "Nationality": "New Zealander"},
+
+    "David Dobrik": {"Follower_Count": 11_000_000, "Occupation": "YouTuber", "Nationality": "American"},
+
+    "Emma Chamberlain": {"Follower_Count": 12_000_000, "Occupation": "Influencer", "Nationality": "American"},
+
+    "Loren Gray": {"Follower_Count": 23_000_000, "Occupation": "Singer/Influencer", "Nationality": "American"},
+
+    "Addison Rae": {"Follower_Count": 38_000_000, "Occupation": "Influencer", "Nationality": "American"},
+
+    "Dixie D'Amelio": {"Follower_Count": 24_000_000, "Occupation": "Influencer", "Nationality": "American"},
+
+    "Bella Poarch": {"Follower_Count": 15_000_000, "Occupation": "Influencer/Singer", "Nationality": "Filipino-American"},
+
+    "Chloe Bailey": {"Follower_Count": 7_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Halle Bailey": {"Follower_Count": 6_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Tyler, The Creator": {"Follower_Count": 11_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Frank Ocean": {"Follower_Count": 3_000_000, "Occupation": "Musician", "Nationality": "American"},
+
+    "Bad Bunny": {"Follower_Count": 46_000_000, "Occupation": "Musician", "Nationality": "Puerto Rican"},
+
+    "Karol G": {"Follower_Count": 67_000_000, "Occupation": "Musician", "Nationality": "Colombian"},
+
+    "J Balvin": {"Follower_Count": 52_000_000, "Occupation": "Musician", "Nationality": "Colombian"},
+
+    "Sebastian Yatra": {"Follower_Count": 30_000_000, "Occupation": "Singer", "Nationality": "Colombian"},
+
+    "Maluma": {"Follower_Count": 64_000_000, "Occupation": "Singer", "Nationality": "Colombian"},
+
+    "Becky G": {"Follower_Count": 37_000_000, "Occupation": "Singer", "Nationality": "American"},
+
+    "Luis Fonsi": {"Follower_Count": 10_000_000, "Occupation": "Singer", "Nationality": "Puerto Rican"},
+
+    "Anitta": {"Follower_Count": 65_000_000, "Occupation": "Singer", "Nationality": "Brazilian"},
+
+    "Neymar Jr": {"Follower_Count": 220_000_000, "Occupation": "Footballer", "Nationality": "Brazilian"},
+
+    "Vinicius Junior": {"Follower_Count": 50_000_000, "Occupation": "Footballer", "Nationality": "Brazilian"},
+
+    "Erling Haaland": {"Follower_Count": 44_000_000, "Occupation": "Footballer", "Nationality": "Norwegian"},
+
+    "Marcus Rashford": {"Follower_Count": 16_000_000, "Occupation": "Footballer", "Nationality": "British"},
+
+    "Harry Kane": {"Follower_Count": 15_000_000, "Occupation": "Footballer", "Nationality": "British"},
+
+    "Bukayo Saka": {"Follower_Count": 10_000_000, "Occupation": "Footballer", "Nationality": "British"},
+
+    "Kylian Mbappe": {"Follower_Count": 110_000_000, "Occupation": "Footballer", "Nationality": "French"},
+
+    "Karim Benzema": {"Follower_Count": 74_000_000, "Occupation": "Footballer", "Nationality": "French"},
+
+    "Sergio Ramos": {"Follower_Count": 60_000_000, "Occupation": "Footballer", "Nationality": "Spanish"},
+
+    "Luka Modric": {"Follower_Count": 32_000_000, "Occupation": "Footballer", "Nationality": "Croatian"},
+
+    "Paulo Dybala": {"Follower_Count": 56_000_000, "Occupation": "Footballer", "Nationality": "Argentinian"},
+
+    "Dwayne Wade": {"Follower_Count": 20_000_000, "Occupation": "Basketball Player", "Nationality": "American"},
+
+    "Jimmy Butler": {"Follower_Count": 10_000_000, "Occupation": "Basketball Player", "Nationality": "American"},
+
+    "Stephen Curry": {"Follower_Count": 56_000_000, "Occupation": "Basketball Player", "Nationality": "American"},
+
+    "Ja Morant": {"Follower_Count": 10_000_000, "Occupation": "Basketball Player", "Nationality": "American"}
+
+   
+
+    }
+
+ 
+
+ 
+
+ 
+
+score = 0
+
+streak_counter = 0
+
+current_name, current_info = random.choice(list(options.items()))
+
+while True:
+
+    while True:
+
+        next_name, next_info = random.choice(list(options.items()))
+
+        if next_name != current_name and next_info["Follower_Count"] != current_info["Follower_Count"]:
+
+            break
+
+ 
+
+    output_A = f"Option A: {current_name} | " + " | ".join([f"{k}: {v}" for k, v in current_info.items() if k != "Follower_Count"])
+
+    output_B = f"Option B: {next_name} | " + " | ".join([f"{k}: {v}" for k, v in next_info.items() if k != "Follower_Count"])
+
+ 
+
+    print(output_A)
+
+    print(output_B)
+
+ 
+
+    print("\n")
+
+ 
+
+    user_input = input("Who has a higher instagram follower count, A or B: ").lower()
+
+ 
+
+    print("\n")
+
+ 
+
+    a_followers = current_info["Follower_Count"]
+
+    b_followers = next_info["Follower_Count"]
+
+ 
+
+    # while a_followers == b_followers:
+
+    #     print("\nIt's a tie! Both have the same number of followers.")
+
+    #     while True:
+
+    #         next_name, next_info = random.choice(list(options.items()))
+
+    #         if next_name != current_name:
+
+    #             b_followers = next_info["Follower_Count"]
+
+    #             break
+
+ 
+
+    is_correct = (
+
+       
+
+        (user_input == "a" and a_followers > b_followers) or
+
+        (user_input == "b" and b_followers > a_followers)
+
+ 
+
+    )
+
+ 
+
+    if is_correct:
+
+        score += 1
+
+        print("\n Correct!! \n")
+
+        print(f"{current_name}: {a_followers:,} followers")
+
+        print(f"{next_name}: {b_followers:,} followers")
+
+        print(f"Current Score: {score}\n")
+
+ 
+
+        winner_name, winner_info = (current_name, current_info) if a_followers > b_followers else (next_name, next_info)
+
+ 
+
+        if winner_name == current_name:
+
+            streak_counter += 1
+
+        else:
+
+            streak_counter = 1
+
+ 
+
+        if streak_counter > 3:
+
+            print(f"\n{current_name} has won 4 times in a row! Forcing a new name....\n")
+
+            while True:
+
+                new_name, new_info = random.choice(list(options.items()))
+
+                if new_name != current_name:
+
+                    current_name, current_info = new_name, new_info
+
+                    streak_counter = 0
+
+                    break
+
+        else:
+
+            current_name, current_info = winner_name, winner_info
+
+    else:
+
+        print("\n Incorrect!! \n")
+
+        print(f"{current_name}: {a_followers:,} followers")
+
+        print(f"{next_name}: {b_followers:,} followers")
+
+        print(f"\nFinal Score: {score}")
+
+        break
